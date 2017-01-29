@@ -1,0 +1,22 @@
+{
+  "name": "vivify",
+  "version": "0.0.1",
+  "description": "A simple tool to help you manage nested objects using a clean API.",
+  "main": "vivify.js",
+  "author": {
+    "name": "Marco Stagni",
+    "email": "mrc.stagni@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marco-ponds/vivify.git"
+  },
+  "license": "BSD-3-Clause",
+  "keywords": [
+      "nested",
+      "object",
+      "vivify",
+      "populate",
+      "create"
+  ]
+}
