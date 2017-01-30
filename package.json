@@ -1,6 +1,6 @@
 {
   "name": "vivifyjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple tool to help you manage nested objects using a clean API.",
   "main": "vivify.js",
   "author": {
@@ -13,10 +13,10 @@
   },
   "license": "BSD-3-Clause",
   "keywords": [
-      "nested",
-      "object",
-      "vivify",
-      "populate",
-      "create"
+    "nested",
+    "object",
+    "vivify",
+    "populate",
+    "create"
   ]
 }
