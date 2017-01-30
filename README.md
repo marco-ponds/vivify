@@ -34,7 +34,7 @@ A similar approach will force you to check wether the keys/objects you're lookin
 
 Simply run:
 
-    npm install -g vivify
+    npm install -g vivifyjs
 
 ### 3) usage
 

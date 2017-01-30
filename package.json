@@ -1,5 +1,5 @@
 {
-  "name": "vivify",
+  "name": "vivifyjs",
   "version": "0.0.1",
   "description": "A simple tool to help you manage nested objects using a clean API.",
   "main": "vivify.js",

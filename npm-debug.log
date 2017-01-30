@@ -1,106 +1,34 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/marco/.nvm/versions/node/v6.9.1/bin/node',
 1 verbose cli   '/home/marco/.nvm/versions/node/v6.9.1/bin/npm',
-1 verbose cli   'publish' ]
+1 verbose cli   'version',
+1 verbose cli   'patch' ]
 2 info using npm@3.10.8
 3 info using node@v6.9.1
-4 verbose publish [ '.' ]
-5 silly cache add args [ '.', null ]
-6 verbose cache add spec .
-7 silly cache add parsed spec Result {
-7 silly cache add   raw: '.',
-7 silly cache add   scope: null,
-7 silly cache add   escapedName: null,
-7 silly cache add   name: null,
-7 silly cache add   rawSpec: '.',
-7 silly cache add   spec: '/home/marco/Documenti/Development/Vivify',
-7 silly cache add   type: 'directory' }
-8 verbose addLocalDirectory /home/marco/.npm/vivify/0.0.1/package.tgz not in flight; packing
-9 verbose correctMkdir /home/marco/.npm correctMkdir not in flight; initializing
-10 info lifecycle vivify@0.0.1~prepublish: vivify@0.0.1
-11 silly lifecycle vivify@0.0.1~prepublish: no script for prepublish, continuing
-12 verbose tar pack [ '/home/marco/.npm/vivify/0.0.1/package.tgz',
-12 verbose tar pack   '/home/marco/Documenti/Development/Vivify' ]
-13 verbose tarball /home/marco/.npm/vivify/0.0.1/package.tgz
-14 verbose folder /home/marco/Documenti/Development/Vivify
-15 verbose addLocalTarball adding from inside cache /home/marco/.npm/vivify/0.0.1/package.tgz
-16 verbose correctMkdir /home/marco/.npm correctMkdir not in flight; initializing
-17 silly cache afterAdd vivify@0.0.1
-18 verbose afterAdd /home/marco/.npm/vivify/0.0.1/package/package.json not in flight; writing
-19 verbose correctMkdir /home/marco/.npm correctMkdir not in flight; initializing
-20 verbose afterAdd /home/marco/.npm/vivify/0.0.1/package/package.json written
-21 silly publish { name: 'vivify',
-21 silly publish   version: '0.0.1',
-21 silly publish   description: 'A simple tool to help you vivify nested objects using a clean API.',
-21 silly publish   main: 'vivify.js',
-21 silly publish   author: { name: 'Marco Stagni', email: 'mrc.stagni@gmail.com' },
-21 silly publish   repository: { type: 'git', url: 'git://github.com/marco-ponds/vivify.git' },
-21 silly publish   license: 'BSD-3-Clause',
-21 silly publish   keywords: [ 'nested', 'object', 'vivify', 'populate', 'create' ],
-21 silly publish   readme: '# vivify\n\nA simple tool to set/get nested objects through a clean API.\n\n---\n\n### 1) use case\n\nBefore describing how to install and use vivify, we need a small introduction for the best usage: you need to retrieve or set a key deep inside an object.\n\nThe purpose of this tool is helping you avoiding:\n\n    // get\n    var readValue = object[\'key1\'][\'key2\']..[\'keyN\'];\n\n    var readValue = object.key1.key2...keyN\n\n    // set\n    object.key1 = {\n        ...\n        key2: {\n            ...\n            key3: {\n                ..\n                keyN: myValue\n            }\n        }\n    };\n\n\nA similar approach will force you to check wether the keys/objects you\'re looking for are existing or not, and provide a valid solution if necessary. Vivify will try to solve this "problem".\n\n### 2) installation\n\nSimply run:\n\n    npm install -g vivify\n\n### 3) usage\n\nSet a value:\n\n    var vivify = require(\'vivify\');\n    // import vivify from \'vivify\';\n\n    var guy = vivify.set(\'job.position.salary\', 25000);\n\nthis will create an object with this structure\n\n    {\n        job: {\n            position: {\n                salary: 25000\n            }\n        }\n    }\n\nRead a value:\n\n    var position = vivify.get(\'job.position\', guy);\n\nAnd guess what? you will have this object in return:\n\n    {\n        position: {\n            salary: 25000\n        }\n    }\n\nVivify can be used on already existing objects while setting values, but will create a new object if it\'s not passed as parameter. So, if you want to set a value inside the location object of window, you can simply do:\n\n    vivify.set(\'location.newKey\', newValue, window);\n\n#### 4) about\n\nVivify is written in Javascript by [Marco Stagni](http://marcostagni.com), and it\'s licensed under [BSD-3-Clause](https://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22Revised_BSD_License.22.2C_.22New_BSD_License.22.2C_or_.22Modified_BSD_License.22.29).\n',
-21 silly publish   readmeFilename: 'README.md',
-21 silly publish   bugs: { url: 'https://github.com/marco-ponds/vivify/issues' },
-21 silly publish   homepage: 'https://github.com/marco-ponds/vivify#readme',
-21 silly publish   _id: 'vivify@0.0.1',
-21 silly publish   scripts: {},
-21 silly publish   _shasum: '716cc9528f7d9c64e01890305d08483beb6861f7',
-21 silly publish   _from: '.' }
-22 verbose getPublishConfig undefined
-23 silly mapToRegistry name vivify
-24 silly mapToRegistry using default registry
-25 silly mapToRegistry registry https://registry.npmjs.org/
-26 silly mapToRegistry data Result {
-26 silly mapToRegistry   raw: 'vivify',
-26 silly mapToRegistry   scope: null,
-26 silly mapToRegistry   escapedName: 'vivify',
-26 silly mapToRegistry   name: 'vivify',
-26 silly mapToRegistry   rawSpec: '',
-26 silly mapToRegistry   spec: 'latest',
-26 silly mapToRegistry   type: 'tag' }
-27 silly mapToRegistry uri https://registry.npmjs.org/vivify
-28 verbose publish registryBase https://registry.npmjs.org/
-29 silly publish uploading /home/marco/.npm/vivify/0.0.1/package.tgz
-30 verbose request uri https://registry.npmjs.org/vivify
-31 verbose request sending authorization for write operation
-32 info attempt registry request try #1 at 23:58:18
-33 verbose request using bearer token for auth
-34 verbose request id 7cea3c266d9d66e4
-35 http request PUT https://registry.npmjs.org/vivify
-36 http 403 https://registry.npmjs.org/vivify
-37 verbose headers { 'content-type': 'application/json',
-37 verbose headers   'cache-control': 'max-age=300',
-37 verbose headers   'content-length': '100',
-37 verbose headers   'accept-ranges': 'bytes',
-37 verbose headers   date: 'Sun, 29 Jan 2017 23:58:19 GMT',
-37 verbose headers   via: '1.1 varnish',
-37 verbose headers   connection: 'keep-alive',
-37 verbose headers   'x-served-by': 'cache-lhr6339-LHR',
-37 verbose headers   'x-cache': 'MISS',
-37 verbose headers   'x-cache-hits': '0',
-37 verbose headers   'x-timer': 'S1485734298.899535,VS0,VE595',
-37 verbose headers   vary: 'Accept-Encoding' }
-38 verbose request invalidating /home/marco/.npm/registry.npmjs.org/vivify on PUT
-39 error publish Failed PUT 403
-40 verbose stack Error: you do not have permission to publish "vivify". Are you logged in as the correct user? : vivify
-40 verbose stack     at makeError (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
-40 verbose stack     at CachingRegistryClient.<anonymous> (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
-40 verbose stack     at Request._callback (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
-40 verbose stack     at Request.self.callback (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:187:22)
-40 verbose stack     at emitTwo (events.js:106:13)
-40 verbose stack     at Request.emit (events.js:191:7)
-40 verbose stack     at Request.<anonymous> (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:1044:10)
-40 verbose stack     at emitOne (events.js:96:13)
-40 verbose stack     at Request.emit (events.js:188:7)
-40 verbose stack     at IncomingMessage.<anonymous> (/home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/node_modules/request/request.js:965:12)
-41 verbose statusCode 403
-42 verbose pkgid vivify
-43 verbose cwd /home/marco/Documenti/Development/Vivify
-44 error Linux 4.4.0-47-generic
-45 error argv "/home/marco/.nvm/versions/node/v6.9.1/bin/node" "/home/marco/.nvm/versions/node/v6.9.1/bin/npm" "publish"
-46 error node v6.9.1
-47 error npm  v3.10.8
-48 error code E403
-49 error you do not have permission to publish "vivify". Are you logged in as the correct user? : vivify
-50 error If you need help, you may report this error at:
-50 error     <https://github.com/npm/npm/issues>
-51 verbose exit [ 1, true ]
+4 info git [ 'status', '--porcelain' ]
+5 verbose stack Error: Git working directory not clean.
+5 verbose stack M README.md
+5 verbose stack D npm-debug.log
+5 verbose stack M package.json
+5 verbose stack     at /home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/version.js:247:19
+5 verbose stack     at /home/marco/.nvm/versions/node/v6.9.1/lib/node_modules/npm/lib/utils/no-progress-while-running.js:21:8
+5 verbose stack     at ChildProcess.exithandler (child_process.js:197:7)
+5 verbose stack     at emitTwo (events.js:106:13)
+5 verbose stack     at ChildProcess.emit (events.js:191:7)
+5 verbose stack     at maybeClose (internal/child_process.js:877:16)
+5 verbose stack     at Socket.<anonymous> (internal/child_process.js:334:11)
+5 verbose stack     at emitOne (events.js:96:13)
+5 verbose stack     at Socket.emit (events.js:188:7)
+5 verbose stack     at Pipe._handle.close [as _onclose] (net.js:498:12)
+6 verbose cwd /home/marco/Documenti/Development/Vivify
+7 error Linux 4.4.0-47-generic
+8 error argv "/home/marco/.nvm/versions/node/v6.9.1/bin/node" "/home/marco/.nvm/versions/node/v6.9.1/bin/npm" "version" "patch"
+9 error node v6.9.1
+10 error npm  v3.10.8
+11 error Git working directory not clean.
+11 error M README.md
+11 error D npm-debug.log
+11 error M package.json
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
