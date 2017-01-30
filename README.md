@@ -40,8 +40,8 @@ Simply run:
 
 Set a value:
 
-    var vivify = require('vivify');
-    // import vivify from 'vivify';
+    var vivify = require('vivifyjs');
+    // import vivify from 'vivifyjs';
 
     var guy = vivify.set('job.position.salary', 25000);
 

@@ -10,7 +10,7 @@ const vivify = {
         }
         var k = splitted.shift();
         obj[k] = obj[k] ? obj[k] : {};
-        var v = vivify.set(obj[k], splitted.join('.'), value);
+        var v = vivify.set(splitted.join('.'), value, obj[k]);
         return obj;
     },
 
@@ -24,7 +24,7 @@ const vivify = {
           return obj[splitted[0]];
         }
         var k = splitted.shift();
-        var v = obj[k] ? vivify.get(obj[k], splitted.join('.')) : false;
+        var v = obj[k] ? vivify.get(splitted.join('.'), obj[k]) : false;
         return v;
     }
 };
